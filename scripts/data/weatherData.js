@@ -49,12 +49,17 @@ export function getWeather(resultsInfo, inputInfo) {
     })
 
     .then((data) => {
-      if (data.cod === "404") {
-        results.innerHTML = `<h2>city not found</h2>`;
-      } else {
+      if (data.cod !== "200") {
+        results.innerHTML = `<h2>${data.message}</h2>`;
+        return;
+      }
+
+      if(!data.weather || !data.weather.length){
+       results.innerHTML = `<h2>Weather data not available</h2>`
+       return;
+        }
         saveToStorage(data);
         weatherInfo(data, results);
-      }
     });
 
   return weatherData;
