@@ -1,4 +1,5 @@
-import { renderingWeather } from "./weatherData.js";
+import { renderingWeather,saveToStorage } from "./weatherData.js";
+
 export function getCurrentLocation(results) {
   results.innerHTML = "<h2>loading...</h2>";
 
@@ -27,6 +28,7 @@ export function getCurrentLocation(results) {
         const icon = data.weather[0].icon;
         const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
         data.name = cityName;
+        saveToStorage(data);
         renderingWeather(data, iconUrl, results);
       })
       .catch((error) => {

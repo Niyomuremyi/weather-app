@@ -14,6 +14,10 @@ export function renderingWeather(weatherData, iconUrldata, resultsInfo) {
         `;
 }
 
+export function saveToStorage(data){
+         localStorage.setItem("weather-data", JSON.stringify(data));
+        }
+
 function weatherInfo(data , results) {
   const icon = data.weather[0].icon;
   const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
@@ -48,7 +52,7 @@ export function getWeather(resultsInfo, inputInfo) {
       if (data.cod === "404") {
         results.innerHTML = `<h2>city not found</h2>`;
       } else {
-        localStorage.setItem("weather-data", JSON.stringify(data));
+        saveToStorage(data);
         weatherInfo(data, results);
       }
     });
