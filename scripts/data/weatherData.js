@@ -7,15 +7,6 @@ export function renderingWeather(weatherData, iconUrldata, resultsInfo) {
   const iconUrl = iconUrldata;
   const condition = data.weather[0].main;
 
-   if (condition === "Clear") {
-    document.body.style.background =
-      "linear-gradient(to bottom, #4facfe, #ffffff)";
-  } else if (condition === "Clouds") {
-    document.body.style.background = "linear-gradient(to bottom, gray, white)";
-  } else if (condition === "Rain") {
-    document.body.style.background =
-      "linear-gradient(to bottom, #4b6cb7, #182848)";
-  }
 
   results.innerHTML = `
         <h1>${data.name}</h1>
@@ -31,7 +22,7 @@ export function saveToStorage(data) {
   localStorage.setItem("weather-data", JSON.stringify(data));
 }
 
-function weatherInfo(data, results) {
+export function weatherInfo(data, results) {
   const icon = data.weather[0].icon;
   const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
   const condition = data.weather[0].main;
