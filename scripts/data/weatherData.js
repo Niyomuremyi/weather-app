@@ -1,4 +1,4 @@
-export const forecastData = JSON.parse(localStorage.getItem("weather-data"));
+export const forecastData = JSON.parse(localStorage.getItem("weather-data")) || "null";
 
 export function renderingWeather(weatherData, iconUrldata, resultsInfo) {
   const results = resultsInfo;
