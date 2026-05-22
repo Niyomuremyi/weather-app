@@ -6,7 +6,7 @@ body {
   min-height: 100vh;
   font-family: Arial;
   background: linear-gradient(to bottom, #87ceeb, #ffffff);
-  padding:20px 0;
+  padding:20px;
   box-sizing:border-box;
 }
 
@@ -30,6 +30,7 @@ input {
   flex:1;
   padding: 10px;
   min-width:0;
+  font-size:16px;
 }
 
 button {
@@ -52,5 +53,31 @@ button {
   border-radius: 12px;
   width: 100%;
   box-sizing:border-box;
+}
+
+@media(max-width:600px){
+  button{
+    flex:0 0 120px;
+    font-size:16px;
+  }
+
+  .search{
+    flex-wrap:wrap;
+  }
+
+  input{
+    width:100%;
+  }
+
+  button{
+    flex:1;
+    font-size:14px;
+    padding:10px 6px;
+  }
+
+  .results{
+    min-height:200px;
+    font-size:14px;
+  }
 }
 
