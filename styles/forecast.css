@@ -55,6 +55,11 @@ button {
   box-sizing:border-box;
 }
 
+.about-link{
+  color:white;
+  text-align:center;
+}
+
 @media(max-width:600px){
   button{
     flex:0 0 120px;

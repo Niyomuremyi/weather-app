@@ -1,0 +1,17 @@
+body{
+  margin: 0;
+  height: 100vh;              /* take the full browser height */
+  display: flex;
+  justify-content: center;    /* horizontal center */
+  align-items: center;        /* vertical center */
+}
+
+div{
+  min-height: 300px;
+  border: 2px solid #141313;
+  padding: 10px;
+  text-align: center;
+  border-radius: 12px;
+  width: 50%;
+  box-sizing: border-box;
+}
